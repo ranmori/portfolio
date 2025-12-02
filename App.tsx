@@ -5,7 +5,7 @@ import Footer from './components/Footer';
 import GeminiChat from './components/GeminiChat';
 
 const App: React.FC = () => {
-  // Theme state: defaults to 'winter' (Light/Blue) or 'night' (Dark/Neon)
+  // Theme state: defaults to 'winter' (Light/Blue) or 'black' (Dark/Black)
   const [theme, setTheme] = useState<string>('winter');
 
   useEffect(() => {
@@ -15,7 +15,7 @@ const App: React.FC = () => {
   }, []);
 
   const toggleTheme = () => {
-    const newTheme = theme === 'winter' ? 'night' : 'winter';
+    const newTheme = theme === 'winter' ? 'black' : 'winter';
     setTheme(newTheme);
     localStorage.setItem('theme', newTheme);
     document.documentElement.setAttribute('data-theme', newTheme);
@@ -55,7 +55,7 @@ function Portfolio() {
       <div className={`fixed inset-0 z-0 pointer-events-none transition-colors duration-700 ${
         theme === 'winter' 
           ? 'bg-gradient-to-br from-[#f8f6f4] via-[#e8e3dd] to-[#f0ebe5]' 
-          : 'bg-gradient-to-br from-[#1a1a1a] via-[#2d2d2d] to-[#252525]'
+          : 'bg-black'
       }`}></div>
       
       {/* 2. Polka Dot Pattern */}

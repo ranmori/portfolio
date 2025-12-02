@@ -86,12 +86,12 @@ export const HOBBIES: { paintings: Painting[]; books: Book[] } = {
     { id: 4, title: "Code Structures", style: "Generative Art", image: "https://picsum.photos/600/400?random=103" },
   ],
   books: [
-    { id: 1, title: "The Pragmatic Programmer", author: "Andrew Hunt", category: "Tech" },
-    { id: 2, title: "Clean Code", author: "Robert C. Martin", category: "Tech" },
-    { id: 3, title: "Dune", author: "Frank Herbert", category: "Sci-Fi" },
-    { id: 4, title: "Atomic Habits", author: "James Clear", category: "Self Improvement" },
-    { id: 5, title: "Snow Crash", author: "Neal Stephenson", category: "Cyberpunk" },
-    { id: 6, title: "Refactoring", author: "Martin Fowler", category: "Tech" },
+    { id: 1, title: "The Pragmatic Programmer", author: "Andrew Hunt", category: "Tech", cover: "https://picsum.photos/150/220?random=201" },
+    { id: 2, title: "Clean Code", author: "Robert C. Martin", category: "Tech", cover: "https://picsum.photos/150/220?random=202" },
+    { id: 3, title: "Dune", author: "Frank Herbert", category: "Sci-Fi", cover: "https://picsum.photos/150/220?random=203" },
+    { id: 4, title: "Atomic Habits", author: "James Clear", category: "Self Improvement", cover: "https://picsum.photos/150/220?random=204" },
+    { id: 5, title: "Snow Crash", author: "Neal Stephenson", category: "Cyberpunk", cover: "https://picsum.photos/150/220?random=205" },
+    { id: 6, title: "Refactoring", author: "Martin Fowler", category: "Tech", cover: "https://picsum.photos/150/220?random=206" },
   ]
 };
 

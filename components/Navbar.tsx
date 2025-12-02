@@ -88,7 +88,7 @@ const Navbar: React.FC<NavbarProps> = ({ toggleTheme, theme }) => {
 
            {/* Theme Toggle */}
            <button onClick={toggleTheme} className="btn btn-ghost btn-xs btn-circle text-base-content/60 hover:text-primary">
-            {theme === 'night' ? <Sun size={14} /> : <Moon size={14} />}
+            {theme === 'black' ? <Sun size={14} /> : <Moon size={14} />}
           </button>
 
           {/* System Icons */}
