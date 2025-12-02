@@ -13,6 +13,10 @@ const GeminiChat: React.FC = () => {
   ]);
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  
+  // Workaround for framer-motion type inference issues
+  const MotionButton = motion.button as any;
+  const MotionDiv = motion.div as any;
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -82,7 +86,7 @@ const GeminiChat: React.FC = () => {
   return (
     <>
       {/* Floating Action Button */}
-      <motion.button
+      <MotionButton
         className="fixed bottom-6 right-6 btn btn-circle btn-primary btn-lg shadow-xl shadow-primary/30 z-50 group border border-white/20"
         onClick={() => setIsOpen(!isOpen)}
         whileHover={{ scale: 1.05 }}
@@ -95,12 +99,12 @@ const GeminiChat: React.FC = () => {
                 <span className="relative inline-flex rounded-full h-3 w-3 bg-secondary"></span>
             </span>
         )}
-      </motion.button>
+      </MotionButton>
 
       {/* Chat Window */}
       <AnimatePresence>
         {isOpen && (
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, y: 50, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 50, scale: 0.95 }}
@@ -177,7 +181,7 @@ const GeminiChat: React.FC = () => {
                 </button>
               </div>
             </div>
-          </motion.div>
+          </MotionDiv>
         )}
       </AnimatePresence>
     </>

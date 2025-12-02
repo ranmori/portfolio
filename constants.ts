@@ -1,4 +1,5 @@
-import { Project, Skill, Experience } from './types';
+
+import { Project, Skill, Experience, Painting, Book } from './types';
 
 export const HERO_DATA = {
   name: "Alex Dev",
@@ -77,6 +78,23 @@ export const PROJECTS: Project[] = [
   },
 ];
 
+export const HOBBIES: { paintings: Painting[]; books: Book[] } = {
+  paintings: [
+    { id: 1, title: "Neon Cityscape", style: "Digital / Cyberpunk", image: "https://picsum.photos/600/400?random=100" },
+    { id: 2, title: "Abstract Thoughts", style: "Oil on Canvas", image: "https://picsum.photos/600/400?random=101" },
+    { id: 3, title: "Mountain Solitude", style: "Watercolor", image: "https://picsum.photos/600/400?random=102" },
+    { id: 4, title: "Code Structures", style: "Generative Art", image: "https://picsum.photos/600/400?random=103" },
+  ],
+  books: [
+    { id: 1, title: "The Pragmatic Programmer", author: "Andrew Hunt", category: "Tech" },
+    { id: 2, title: "Clean Code", author: "Robert C. Martin", category: "Tech" },
+    { id: 3, title: "Dune", author: "Frank Herbert", category: "Sci-Fi" },
+    { id: 4, title: "Atomic Habits", author: "James Clear", category: "Self Improvement" },
+    { id: 5, title: "Snow Crash", author: "Neal Stephenson", category: "Cyberpunk" },
+    { id: 6, title: "Refactoring", author: "Martin Fowler", category: "Tech" },
+  ]
+};
+
 export const SYSTEM_PROMPT = `
 You are the AI assistant for Alex Dev's portfolio website.
 Your role is to answer questions about Alex's professional background, skills, and projects based on the following data:
@@ -94,6 +112,9 @@ ${JSON.stringify(EXPERIENCE, null, 2)}
 
 Projects:
 ${JSON.stringify(PROJECTS, null, 2)}
+
+Hobbies & Interests:
+${JSON.stringify(HOBBIES, null, 2)}
 
 Be professional, concise, and helpful. If asked about contact info, suggest looking at the Contact section of the page.
 If asked about something not in the data, politely say you don't have that information but can answer questions about Alex's engineering background.

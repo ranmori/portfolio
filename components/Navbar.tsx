@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, Battery, Wifi, User, Sun, Moon } from 'lucide-react';
+import { Menu, Battery, Wifi, User, Sun, Moon, FileText, Download } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 interface NavbarProps {
@@ -10,6 +10,10 @@ interface NavbarProps {
 const Navbar: React.FC<NavbarProps> = ({ toggleTheme, theme }) => {
   const [time, setTime] = useState(new Date());
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  
+  // Workaround for framer-motion type inference issues
+  const MotionDiv = motion.div as any;
+  const MotionA = motion.a as any;
 
   useEffect(() => {
     const timer = setInterval(() => setTime(new Date()), 60000);
@@ -25,30 +29,63 @@ const Navbar: React.FC<NavbarProps> = ({ toggleTheme, theme }) => {
 
   return (
     <div className="fixed top-0 left-0 right-0 z-50 px-2 pt-2">
-      <motion.div 
-        initial={{ y: -50, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
+      <MotionDiv 
+        initial="hidden"
+        animate="visible"
+        variants={{
+          hidden: { y: -50, opacity: 0 },
+          visible: { 
+            y: 0, 
+            opacity: 1,
+            transition: { 
+              duration: 0.6,
+              ease: "circOut",
+              staggerChildren: 0.15 
+            }
+          }
+        }}
         className="navbar min-h-12 bg-base-100/80 backdrop-blur-md rounded-t-xl sm:rounded-xl border border-white/20 shadow-sm px-4"
       >
         {/* Left: User Profile */}
-        <div className="navbar-start w-auto mr-auto">
+        <MotionDiv 
+          variants={{ hidden: { opacity: 0, x: -20 }, visible: { opacity: 1, x: 0 } }}
+          className="navbar-start w-auto mr-auto"
+        >
           <div className="avatar placeholder online cursor-pointer hover:scale-105 transition-transform">
             <div className="bg-neutral-content text-neutral rounded-full w-8 h-8 border border-white/30 flex items-center justify-center">
               <User size={16} />
             </div>
           </div>
           <span className="ml-3 font-bold text-sm hidden sm:inline-block opacity-70">AlexDevOS</span>
-        </div>
+        </MotionDiv>
         
         {/* Center: Hidden on mobile, System Title */}
-        <div className="navbar-center hidden lg:flex">
+        <MotionDiv 
+          variants={{ hidden: { opacity: 0, scale: 0.8 }, visible: { opacity: 1, scale: 1 } }}
+          className="navbar-center hidden lg:flex"
+        >
           <div className="text-xs font-mono opacity-50 tracking-widest uppercase">
             {time.toLocaleDateString(undefined, { weekday: 'short', month: 'long', day: 'numeric' })}
           </div>
-        </div>
+        </MotionDiv>
         
         {/* Right: Status Icons & Menu */}
-        <div className="navbar-end w-auto ml-auto flex items-center gap-3">
+        <MotionDiv 
+          variants={{ hidden: { opacity: 0, x: 20 }, visible: { opacity: 1, x: 0 } }}
+          className="navbar-end w-auto ml-auto flex items-center gap-3"
+        >
+           {/* RESUME BUTTON */}
+           <MotionA 
+             href="#" // Replace with actual resume link
+             className="btn btn-xs sm:btn-sm btn-ghost border border-white/10 hover:bg-primary hover:text-white mr-2 flex items-center gap-2 group"
+             whileHover={{ scale: 1.05 }}
+             whileTap={{ scale: 0.95 }}
+           >
+              <FileText size={14} className="group-hover:hidden" />
+              <Download size={14} className="hidden group-hover:block" />
+              <span className="hidden sm:inline text-xs font-bold">Resume</span>
+           </MotionA>
+
            {/* Theme Toggle */}
            <button onClick={toggleTheme} className="btn btn-ghost btn-xs btn-circle text-base-content/60 hover:text-primary">
             {theme === 'night' ? <Sun size={14} /> : <Moon size={14} />}
@@ -86,8 +123,8 @@ const Navbar: React.FC<NavbarProps> = ({ toggleTheme, theme }) => {
               </ul>
             )}
           </div>
-        </div>
-      </motion.div>
+        </MotionDiv>
+      </MotionDiv>
     </div>
   );
 };

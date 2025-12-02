@@ -1,23 +1,29 @@
+
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { User, Code2, Folder, Mail, ArrowRight, Github, ExternalLink, Terminal, Sparkles } from 'lucide-react';
+import { User, Code2, Folder, Mail, ArrowRight, Github, ExternalLink, Terminal, Sparkles, Palette } from 'lucide-react';
 import { HERO_DATA } from '../constants';
 import Projects from './Projects';
 import Skills from './Skills';
 import Contact from './Contact';
+import Hobbies from './Hobbies';
 
 const Hero: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<'profile' | 'projects' | 'skills' | 'contact'>('profile');
+  const [activeTab, setActiveTab] = useState<'profile' | 'projects' | 'skills' | 'contact' | 'hobbies'>('profile');
+  
+  // Workaround for framer-motion type inference issues
+  const MotionDiv = motion.div as any;
 
   const tabs = [
     { id: 'profile', label: 'Profile', icon: User },
     { id: 'projects', label: 'Projects', icon: Folder },
     { id: 'skills', label: 'Skills', icon: Code2 },
+    { id: 'hobbies', label: 'Hobbies', icon: Palette },
     { id: 'contact', label: 'Contact', icon: Mail },
   ];
 
   return (
-    <motion.div 
+    <MotionDiv 
       initial={{ opacity: 0, y: 50, scale: 0.95 }}
       animate={{ opacity: 1, y: 0, scale: 1 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
@@ -44,7 +50,7 @@ const Hero: React.FC = () => {
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id as any)}
-                  className={`flex items-center gap-2 px-6 py-2.5 rounded-xl text-sm font-bold transition-all relative group whitespace-nowrap
+                  className={`flex items-center gap-2 px-4 md:px-6 py-2.5 rounded-xl text-sm font-bold transition-all relative group whitespace-nowrap
                     ${isActive 
                       ? 'bg-primary text-primary-content shadow-lg shadow-primary/20' 
                       : 'hover:bg-base-content/5 text-base-content/70 hover:text-base-content'
@@ -53,7 +59,7 @@ const Hero: React.FC = () => {
                   <Icon size={16} />
                   {tab.label}
                   {isActive && (
-                    <motion.div 
+                    <MotionDiv 
                       layoutId="activeTabIndicator"
                       className="absolute bottom-0 left-0 right-0 h-1 bg-white/20 rounded-full mx-4 mb-1"
                     />
@@ -73,7 +79,7 @@ const Hero: React.FC = () => {
         {/* Content Area */}
         <div className="flex-1 p-6 md:p-10 overflow-y-auto relative scrollbar-thin scrollbar-thumb-base-300 scrollbar-track-transparent">
           <AnimatePresence mode="wait">
-            <motion.div
+            <MotionDiv
               key={activeTab}
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -87,7 +93,7 @@ const Hero: React.FC = () => {
                       {/* Avatar Side */}
                       <div className="flex-shrink-0 relative group">
                          <div className="absolute inset-0 bg-primary/20 rounded-[2rem] blur-2xl group-hover:blur-3xl transition-all duration-500"></div>
-                         <motion.div 
+                         <MotionDiv 
                            className="w-64 h-64 lg:w-80 lg:h-80 rounded-[2rem] overflow-hidden shadow-2xl relative border-4 border-base-100 z-10 bg-base-200"
                            whileHover={{ scale: 1.02 }}
                          >
@@ -99,11 +105,11 @@ const Hero: React.FC = () => {
                             {/* Overlay Text */}
                             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6">
                                <div className="text-white">
-                                  <div className="font-bold text-xl">Alex Dev</div>
+                                  <div className="font-bold text-xl">Naema Mohmed</div>
                                   <div className="text-sm opacity-80">San Francisco, CA</div>
                                </div>
                             </div>
-                         </motion.div>
+                         </MotionDiv>
                          {/* Floating Decor */}
                          <div className="absolute -top-6 -right-6 bg-base-100 p-4 rounded-2xl shadow-xl border border-white/10 z-20 animate-float-delayed">
                              <Sparkles className="text-yellow-400 w-8 h-8" />
@@ -115,7 +121,7 @@ const Hero: React.FC = () => {
 
                       {/* Text Side */}
                       <div className="flex-1 text-center lg:text-left">
-                        <motion.div
+                        <MotionDiv
                           initial={{ opacity: 0, y: 20 }}
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ delay: 0.1 }}
@@ -170,7 +176,7 @@ const Hero: React.FC = () => {
                                 <span className="text-xs uppercase tracking-wider">Commitment</span>
                              </div>
                           </div>
-                        </motion.div>
+                        </MotionDiv>
                       </div>
                    </div>
                 </div>
@@ -178,12 +184,13 @@ const Hero: React.FC = () => {
 
               {activeTab === 'projects' && <Projects />}
               {activeTab === 'skills' && <Skills />}
+              {activeTab === 'hobbies' && <Hobbies />}
               {activeTab === 'contact' && <Contact />}
-            </motion.div>
+            </MotionDiv>
           </AnimatePresence>
         </div>
       </div>
-    </motion.div>
+    </MotionDiv>
   );
 };
 

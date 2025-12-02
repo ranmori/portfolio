@@ -2,8 +2,12 @@ import React from 'react';
 import { SKILLS, EXPERIENCE } from '../constants';
 import { motion } from 'framer-motion';
 import { Briefcase, Code, Cpu } from 'lucide-react';
+import GitHeatmap from './GitHeatmap';
 
 const Skills: React.FC = () => {
+  // Workaround for framer-motion type inference issues
+  const MotionDiv = motion.div as any;
+
   return (
     <div className="h-full overflow-y-auto pr-2 pb-10">
       <div className="text-center mb-10">
@@ -21,7 +25,7 @@ const Skills: React.FC = () => {
           
           <div className="space-y-4">
             {SKILLS.map((skillGroup, index) => (
-              <motion.div 
+              <MotionDiv 
                 key={index} 
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -39,7 +43,7 @@ const Skills: React.FC = () => {
                     </div>
                   ))}
                 </div>
-              </motion.div>
+              </MotionDiv>
             ))}
           </div>
 
@@ -65,7 +69,7 @@ const Skills: React.FC = () => {
 
           <div className="relative border-l-2 border-base-content/10 ml-3 space-y-8">
             {EXPERIENCE.map((exp, index) => (
-              <motion.div 
+              <MotionDiv 
                 key={index}
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -83,11 +87,14 @@ const Skills: React.FC = () => {
                 <p className="text-sm opacity-70 leading-relaxed bg-base-100/40 p-3 rounded-lg border border-white/5">
                   {exp.description}
                 </p>
-              </motion.div>
+              </MotionDiv>
             ))}
           </div>
         </div>
       </div>
+
+      {/* Heatmap Section */}
+      <GitHeatmap />
     </div>
   );
 };

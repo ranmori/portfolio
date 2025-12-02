@@ -1,3 +1,4 @@
+
 export interface Project {
   id: number;
   title: string;
@@ -24,4 +25,18 @@ export interface Message {
   role: 'user' | 'model';
   text: string;
   timestamp: Date;
+}
+
+export interface Painting {
+  id: number;
+  title: string;
+  style: string;
+  image: string;
+}
+
+export interface Book {
+  id: number;
+  title: string;
+  author: string;
+  category: string;
 }
