@@ -35,7 +35,8 @@ const GeminiChat: React.FC = () => {
     setIsLoading(true);
 
     try {
-        const apiKey = process.env.API_KEY;
+        // Safe access to process.env
+        const apiKey = typeof process !== 'undefined' ? process.env.API_KEY : undefined;
 
         if (!apiKey) {
            throw new Error("API Key is missing. This is a demo environment.");

@@ -55,12 +55,12 @@ function Portfolio() {
       <div className={`fixed inset-0 z-0 pointer-events-none transition-colors duration-700 ${
         theme === 'winter' 
           ? 'bg-gradient-to-br from-[#f8f6f4] via-[#e8e3dd] to-[#f0ebe5]' 
-          : 'bg-black'
+          : 'bg-gradient-to-br from-black via-[#050505] to-[#0a0a0a]'
       }`}></div>
       
       {/* 2. Polka Dot Pattern */}
       <div className="fixed inset-0 z-0 pointer-events-none opacity-[0.4]" style={{
-        backgroundImage: `radial-gradient(circle, ${theme === 'winter' ? 'rgba(100, 100, 100, 0.2)' : 'rgba(255, 255, 255, 0.1)'} 2px, transparent 2px)`,
+        backgroundImage: `radial-gradient(circle, ${theme === 'winter' ? 'rgba(100, 100, 100, 0.2)' : 'rgba(255, 255, 255, 0.05)'} 2px, transparent 2px)`,
         backgroundSize: '40px 40px',
         backgroundPosition: '0 0'
       }}></div>

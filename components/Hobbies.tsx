@@ -1,7 +1,6 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Palette, Book, Brush } from 'lucide-react';
+import { Palette, Book as BookIcon, Brush } from 'lucide-react';
 import { HOBBIES } from '../constants';
 
 const Hobbies: React.FC = () => {
@@ -100,7 +99,7 @@ const Hobbies: React.FC = () => {
         {/* Books Section */}
          <div>
            <div className="flex items-center gap-2 mb-6 opacity-80">
-              <Book size={20} className="text-secondary" />
+              <BookIcon size={20} className="text-secondary" />
               <h3 className="text-xl font-bold">Reading List</h3>
            </div>
            
