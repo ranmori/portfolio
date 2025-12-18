@@ -2,7 +2,7 @@
 import { Project, Skill, Experience, Painting, Book } from './types';
 
 export const HERO_DATA = {
-  name: "Alex Dev",
+  name: "Naema Mohmed",
   title: "Senior Frontend Engineer",
   tagline: "Building scalable, accessible, and pixel-perfect web experiences.",
   description: "I specialize in the React ecosystem, modern UI/UX with Tailwind CSS, and integrating AI-driven features using the Gemini API. With over 8 years of experience, I transform complex requirements into seamless user interfaces.",
@@ -96,8 +96,8 @@ export const HOBBIES: { paintings: Painting[]; books: Book[] } = {
 };
 
 export const SYSTEM_PROMPT = `
-You are the AI assistant for Alex Dev's portfolio website.
-Your role is to answer questions about Alex's professional background, skills, and projects based on the following data:
+You are the AI assistant for Naema Mohmed's portfolio website.
+Your role is to answer questions about Naema's professional background, skills, and projects based on the following data:
 
 Name: ${HERO_DATA.name}
 Title: ${HERO_DATA.title}
@@ -117,5 +117,5 @@ Hobbies & Interests:
 ${JSON.stringify(HOBBIES, null, 2)}
 
 Be professional, concise, and helpful. If asked about contact info, suggest looking at the Contact section of the page.
-If asked about something not in the data, politely say you don't have that information but can answer questions about Alex's engineering background.
+If asked about something not in the data, politely say you don't have that information but can answer questions about Naema's engineering background.
 `;

@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Mail, Linkedin, Github, Twitter, MapPin, Send, ArrowUpRight } from 'lucide-react';
 import { motion } from 'framer-motion';
@@ -18,13 +19,13 @@ const Contact: React.FC = () => {
                 </div>
 
                 <div className="space-y-4">
-                    <a href="mailto:alex.dev@example.com" className="flex items-center gap-4 p-4 rounded-2xl bg-base-100/50 border border-white/10 hover:bg-white/10 transition-colors group">
+                    <a href="mailto:hello@naema.dev" className="flex items-center gap-4 p-4 rounded-2xl bg-base-100/50 border border-white/10 hover:bg-white/10 transition-colors group">
                         <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
                             <Mail size={24} />
                         </div>
                         <div>
                             <div className="text-xs opacity-50 font-bold tracking-wider">EMAIL</div>
-                            <div className="font-mono">alex.dev@example.com</div>
+                            <div className="font-mono">hello@naema.dev</div>
                         </div>
                         <ArrowUpRight className="ml-auto opacity-0 group-hover:opacity-100 transition-opacity" size={16} />
                     </a>

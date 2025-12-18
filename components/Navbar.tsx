@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Menu, Battery, Wifi, User, Sun, Moon, FileText, Download } from 'lucide-react';
 import { motion } from 'framer-motion';
@@ -28,7 +29,7 @@ const Navbar: React.FC<NavbarProps> = ({ toggleTheme, theme }) => {
   ];
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-50 px-2 pt-2">
+    <div className="fixed top-0 left-0 right-0 z-50 px-2 pt-2 flex justify-center">
       <MotionDiv 
         initial="hidden"
         animate="visible"
@@ -44,7 +45,7 @@ const Navbar: React.FC<NavbarProps> = ({ toggleTheme, theme }) => {
             }
           }
         }}
-        className="navbar min-h-12 bg-base-100/80 backdrop-blur-md rounded-t-xl sm:rounded-xl border border-white/20 shadow-sm px-4"
+        className="navbar w-full max-w-6xl min-h-12 bg-base-100/80 backdrop-blur-md rounded-t-xl sm:rounded-xl border border-white/20 shadow-sm px-4"
       >
         {/* Left: User Profile */}
         <MotionDiv 
@@ -56,7 +57,7 @@ const Navbar: React.FC<NavbarProps> = ({ toggleTheme, theme }) => {
               <User size={16} />
             </div>
           </div>
-          <span className="ml-3 font-bold text-sm hidden sm:inline-block opacity-70">AlexDevOS</span>
+          <span className="ml-3 font-bold text-sm hidden sm:inline-block opacity-70">NaemaOS</span>
         </MotionDiv>
         
         {/* Center: Hidden on mobile, System Title */}
