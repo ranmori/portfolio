@@ -101,10 +101,10 @@ export const PROJECTS: Project[] = [
    id: 3,
     title: "Portfolio",
     description:
-      "personal site, Features automated résumé parsing, instant colour-theme switching, lazy-loaded interactive sections, and SEO/OG meta tuned for recruiter tracking links and 100 Lighthouse performance",
+      "Personal site, Features automated résumé parsing, instant colour-theme switching, lazy-loaded interactive sections, and SEO/OG meta tuned for recruiter tracking links and 100 Lighthouse performance",
     tags: ["typescript", "Vite", "React", "Daisyui", "JavaScript"],
     imageUrl: "https://picsum.photos/600/400?random=12",
-    demoUrl: "#", // optional – deploy if you want
+    demoUrl: "https://portfolio-pv2h.vercel.app/", 
     repoUrl: "https://github.com/ranmori/portfolio",
   },
 ];
