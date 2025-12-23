@@ -77,7 +77,9 @@ const Navbar: React.FC<NavbarProps> = ({ toggleTheme, theme }) => {
         >
            {/* RESUME BUTTON */}
            <MotionA 
-             href="#" // Replace with actual resume link
+             href="https://drive.google.com/file/d/1BCktlXoPY-qdERhJW3nyL-aT5G9efxBH/view?usp=sharing" 
+              target="_blank"
+              rel="noopener noreferrer"
              className="btn btn-xs sm:btn-sm btn-ghost border border-white/10 hover:bg-primary hover:text-white mr-2 flex items-center gap-2 group"
              whileHover={{ scale: 1.05 }}
              whileTap={{ scale: 0.95 }}
@@ -88,9 +90,9 @@ const Navbar: React.FC<NavbarProps> = ({ toggleTheme, theme }) => {
            </MotionA>
 
            {/* Theme Toggle */}
-           <button onClick={toggleTheme} className="btn btn-ghost btn-xs btn-circle text-base-content/60 hover:text-primary">
-            {theme === 'black' ? <Sun size={14} /> : <Moon size={14} />}
-          </button>
+          <button onClick={toggleTheme} className="btn btn-ghost btn-xs btn-circle">
+  {theme === 'dark' ? <Sun size={14} /> : <Moon size={14} />}
+</button>
 
           {/* System Icons */}
           <div className="hidden sm:flex items-center gap-2 px-2 border-l border-white/10 opacity-70">

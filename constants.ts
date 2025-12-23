@@ -3,96 +3,127 @@ import { Project, Skill, Experience, Painting, Book } from './types';
 
 export const HERO_DATA = {
   name: "Naema Mohmed",
-  title: "Senior Frontend Engineer",
+  title: "Full Stack Developer",
   tagline: "Building scalable, accessible, and pixel-perfect web experiences.",
-  description: "I specialize in the React ecosystem, modern UI/UX with Tailwind CSS, and integrating AI-driven features using the Gemini API. With over 8 years of experience, I transform complex requirements into seamless user interfaces.",
-};
+  description: "A MERN developer building end-to-end web applications with a strong focus on clean architecture, accessible UI, and real-world usability. I ship production-ready features, translate Figma designs into scalable code, and integrate AI-driven functionality where it adds real value."};
 
 export const SKILLS: Skill[] = [
   {
-    category: "Frontend Core",
-    items: ["React 18+", "TypeScript", "HTML5/CSS3", "Next.js", "Vite"],
+    category: "Languages",
+    items: ["JavaScript (ES6+)", "TypeScript", "Python", "HTML5", "CSS3"],
   },
   {
-    category: "Styling & UI",
-    items: ["Tailwind CSS", "DaisyUI", "Framer Motion", "Styled Components", "Sass"],
+    category: "Frontend",
+    items: [
+      "React 18+",
+      "Next.js",
+      "Tailwind CSS",
+      "DaisyUI",
+      "Framer Motion",
+      "Sass",
+    ],
+  },
+  {
+    category: "Backend & APIs",
+    items: [
+      "Node.js",
+      "Express.js",
+      "REST APIs",
+      "Authentication (JWT)",
+    ],
   },
   {
     category: "State & Data",
-    items: ["Redux Toolkit", "React Query", "Zustand", "Context API", "GraphQL"],
+    items: [
+      "Redux Toolkit",
+      "React Query",
+      "Context API",
+      "MongoDB",
+      "SQL",
+    ],
   },
   {
-    category: "Tools & DevOps",
-    items: ["Git", "Docker", "Jest/RTL", "CI/CD Actions", "Webpack"],
+    category: "Tools & Workflow",
+    items: [
+      "Git & GitHub",
+      "CI/CD (GitHub Actions)",
+      "Postman",
+      "VS Code",
+      "AI-assisted coding (Copilot, Claude)",
+    ],
   },
 ];
 
+
 export const EXPERIENCE: Experience[] = [
+   {
+    company: "Independent / Contract",
+    role: "Freelance Frontend developer",
+    period: "2023 - Present",
+    description: "Built and shipped responsive, accessible web interfaces using React and modern frontend tooling. Focused on clean UI, performance optimization, and maintainable component architecture. Worked with REST APIs, Git/GitHub workflows, and AI-assisted tools (Copilot, Claude) to improve development speed and code quality.",
+   },
   {
-    company: "TechNova Solutions",
-    role: "Senior Frontend Engineer",
-    period: "2021 - Present",
-    description: "Leading the frontend team in migrating a legacy monolith to a micro-frontend architecture using React and Module Federation. Improved site performance by 40%.",
+    company: "Upwork",
+    role: "Freelance Designer (Remote)",
+    period: "2018 - 2022",
+    description: " Delivered branding, logo design, and digital assets for international clients.Applied UI/UX principles that now directly inform frontend development work.Collaborated remotely with clients, managing feedback, revisions, and deadlines."
   },
+  
+ 
   {
-    company: "Creative Pulse",
-    role: "Frontend Developer",
-    period: "2018 - 2021",
-    description: "Developed interactive marketing campaigns and e-commerce platforms for high-profile clients. Implemented a custom design system using Tailwind CSS.",
-  },
-  {
-    company: "StartUp Inc",
-    role: "Junior Web Developer",
-    period: "2016 - 2018",
-    description: "Collaborated with designers to implement responsive landing pages. Maintained and updated the company's main React application.",
-  },
+    company: "Medina Dental Clinic / Sultan Dental Clinic",
+    role: "General Dental Clinician",
+    period: "2023 - 2024",
+    description: "Worked in high-pressure clinical environments requiring precision, documentation, and ethical responsibility. Developed strong problem-solving, attention to detail, and communication skills transferable to software development and client-facing work.",
+   },
 ];
 
 export const PROJECTS: Project[] = [
   {
     id: 1,
-    title: "AI Analytics Dashboard",
-    description: "A comprehensive dashboard for visualizing AI model performance metrics. Features real-time data updates via WebSockets and interactive D3.js charts.",
-    tags: ["React", "TypeScript", "D3.js", "Tailwind"],
+    title: "Mag Journal",
+    description: "An AI-powered magazine-style web app with content suggestions and summaries, a clean reader interface, integrated background music, categorized article browsing, and instant client-side search. Built with Tailwind CSS for fully responsive and accessible UI, supporting rich user experiences.",
+    tags: ["React", "Vite", "JavaScript", "Tailwind CSS", "AI Integration", "Audio Features", "Responsive Design"],
     imageUrl: "https://picsum.photos/600/400?random=1",
-    demoUrl: "#",
-    repoUrl: "#",
+    demoUrl: "https://mag-journal.vercel.app",
+    repoUrl: "https://github.com/ranmori/Mag_Journal",
   },
   {
-    id: 2,
-    title: "E-Commerce PWA",
-    description: "A high-performance Progressive Web App for an online fashion retailer. Implemented offline capabilities and push notifications.",
-    tags: ["Next.js", "PWA", "Stripe", "Zustand"],
-    imageUrl: "https://picsum.photos/600/400?random=2",
-    demoUrl: "#",
-    repoUrl: "#",
+  id: 2,
+    title: "Doc Meet - Appointment System",
+    description:"MERN appointment platform connecting doctors and patients.Multi-role authentication (doctor, patient, admin), real-time availability and booking, an admin dashboard, JWT-secured APIs. Built for seamless user experience and maintainable, scalable code.",
+    tags: [ "React","Node.js","Express","MongoDB","JWT","Tailwind CSS","REST API", "Authentication"],
+    imageUrl: "https://picsum.photos/600/400?random=11",
+    demoUrl: "https://appointment-system-onk5.vercel.app/",
+    repoUrl: "https://github.com/ranmori/appointmentSystem",
   },
   {
-    id: 3,
-    title: "TaskMaster Pro",
-    description: "A collaborative project management tool inspired by Trello. Features drag-and-drop interfaces and real-time collaboration.",
-    tags: ["React", "Firebase", "Beautiful DnD", "DaisyUI"],
-    imageUrl: "https://picsum.photos/600/400?random=3",
-    demoUrl: "#",
-    repoUrl: "#",
+   id: 3,
+    title: "Portfolio",
+    description:
+      "personal site, Features automated résumé parsing, instant colour-theme switching, lazy-loaded interactive sections, and SEO/OG meta tuned for recruiter tracking links and 100 Lighthouse performance",
+    tags: ["typescript", "Vite", "React", "Daisyui", "JavaScript"],
+    imageUrl: "https://picsum.photos/600/400?random=12",
+    demoUrl: "#", // optional – deploy if you want
+    repoUrl: "https://github.com/ranmori/portfolio",
   },
 ];
 
 export const HOBBIES: { paintings: Painting[]; books: Book[] } = {
   paintings: [
-    { id: 1, title: "Neon Cityscape", style: "Digital / Cyberpunk", image: "https://picsum.photos/600/400?random=100" },
+    { id: 1, title: "Whales", style: "Acrylic", image: "https://picsum.photos/600/400?random=100" },
     { id: 2, title: "Abstract Thoughts", style: "Oil on Canvas", image: "https://picsum.photos/600/400?random=101" },
-    { id: 3, title: "Mountain Solitude", style: "Watercolor", image: "https://picsum.photos/600/400?random=102" },
-    { id: 4, title: "Code Structures", style: "Generative Art", image: "https://picsum.photos/600/400?random=103" },
+    { id: 3, title: "Water Solitude", style: "Watercolor", image: "https://picsum.photos/600/400?random=102" },
+    { id: 4, title: "Code Structures", style: "Digital", image: "https://picsum.photos/600/400?random=103" },
   ],
-  books: [
-    { id: 1, title: "The Pragmatic Programmer", author: "Andrew Hunt", category: "Tech", cover: "https://picsum.photos/150/220?random=201" },
-    { id: 2, title: "Clean Code", author: "Robert C. Martin", category: "Tech", cover: "https://picsum.photos/150/220?random=202" },
-    { id: 3, title: "Dune", author: "Frank Herbert", category: "Sci-Fi", cover: "https://picsum.photos/150/220?random=203" },
-    { id: 4, title: "Atomic Habits", author: "James Clear", category: "Self Improvement", cover: "https://picsum.photos/150/220?random=204" },
-    { id: 5, title: "Snow Crash", author: "Neal Stephenson", category: "Cyberpunk", cover: "https://picsum.photos/150/220?random=205" },
-    { id: 6, title: "Refactoring", author: "Martin Fowler", category: "Tech", cover: "https://picsum.photos/150/220?random=206" },
-  ]
+   books: [
+    { id: 1, title: 'The Pragmatic Programmer', author: 'Andrew Hunt', category: 'Tech', cover: 'https://covers.openlibrary.org/b/isbn/9780135957059-L.jpg', coverFile: 'thepragmaticprogrammer.webp' },
+    { id: 2, title: 'Clean Code', author: 'Robert C. Martin', category: 'Tech', cover: 'https://covers.openlibrary.org/b/isbn/9780132350884-L.jpg', coverFile: 'CLEANCODE.webp' },
+    { id: 3, title: 'Dune', author: 'Frank Herbert', category: 'Sci-Fi', cover: 'https://covers.openlibrary.org/b/isbn/9780441013593-L.jpg', coverFile: 'dUNE.webp' },
+    { id: 4, title: 'Atomic Habits', author: 'James Clear', category: 'Self Improvement', cover: 'https://covers.openlibrary.org/b/isbn/9780735211292-L.jpg', coverFile: 'atomichabits.webp' },
+    { id: 5, title: 'Snow Crash', author: 'Neal Stephenson', category: 'Cyberpunk', cover: 'https://covers.openlibrary.org/b/isbn/9780553380958-L.jpg', coverFile: 'snowcrash.webp' },
+    { id: 6, title: 'Refactoring', author: 'Martin Fowler', category: 'Tech', cover: 'https://covers.openlibrary.org/b/isbn/9780134757599-L.jpg', coverFile: 'Refractoring.webp' },
+  ],
 };
 
 export const SYSTEM_PROMPT = `
