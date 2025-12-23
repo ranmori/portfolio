@@ -7,7 +7,7 @@ import { HOBBIES } from '../constants';
 /*  1. local art  */
 import art1 from '../assets/images/whale.webp';
 import art2 from '../assets/images/penguin.webp';
-import art3 from '../assets/images/fishes.webp';
+import art3 from '../assets/images/Fishes.webp';
 import art4 from '../assets/images/digital.webp';
 const artImages = [art1, art2, art3, art4];
 
