@@ -77,7 +77,7 @@ const Navbar: React.FC<NavbarProps> = ({ toggleTheme, theme }) => {
         >
            {/* RESUME BUTTON */}
            <MotionA 
-             href="https://drive.google.com/file/d/1BCktlXoPY-qdERhJW3nyL-aT5G9efxBH/view?usp=sharing" 
+             href="https://drive.google.com/file/d/1CrZ3l4hfuVdpCk0KtKagD_TxfoFmJVwJ/view?usp=sharing" 
               target="_blank"
               rel="noopener noreferrer"
              className="btn btn-xs sm:btn-sm btn-ghost border border-white/10 hover:bg-primary hover:text-white mr-2 flex items-center gap-2 group"
