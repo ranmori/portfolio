@@ -17,6 +17,7 @@ export const SKILLS: Skill[] = [
     items: [
       "React 18+",
       "Next.js",
+      "Flutter",
       "Tailwind CSS",
       "DaisyUI",
       "Framer Motion",
@@ -29,6 +30,7 @@ export const SKILLS: Skill[] = [
       "Node.js",
       "Express.js",
       "REST APIs",
+      "Socket.io",
       "Authentication (JWT)",
     ],
   },
@@ -39,6 +41,7 @@ export const SKILLS: Skill[] = [
       "React Query",
       "Context API",
       "MongoDB",
+      "PostgreSQL",
       "SQL",
       "Prisma",
     ],
