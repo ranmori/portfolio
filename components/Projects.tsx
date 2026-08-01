@@ -103,24 +103,30 @@ const Projects: React.FC = () => {
                     ))}
                   </div>
 
-                  <div className="flex gap-2 pt-2 border-t border-base-content/5 mt-auto">
-                    <a
-                      href={project.repoUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn btn-xs btn-ghost gap-1 opacity-70 hover:opacity-100 hover:bg-base-200 transition-all"
-                    >
-                      <Github size={12} /> Code
-                    </a>
-                    <a
-                      href={project.demoUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn btn-xs btn-ghost gap-1 text-primary opacity-90 hover:opacity-100 hover:bg-primary/10 ml-auto transition-all"
-                    >
-                      Live Demo <ExternalLink size={12} />
-                    </a>
-                  </div>
+                  {(project.repoUrl || project.demoUrl) && (
+                    <div className="flex gap-2 pt-2 border-t border-base-content/5 mt-auto">
+                      {project.repoUrl && (
+                        <a
+                          href={project.repoUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="btn btn-xs btn-ghost gap-1 opacity-70 hover:opacity-100 hover:bg-base-200 transition-all"
+                        >
+                          <Github size={12} /> Code
+                        </a>
+                      )}
+                      {project.demoUrl && (
+                        <a
+                          href={project.demoUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="btn btn-xs btn-ghost gap-1 text-primary opacity-90 hover:opacity-100 hover:bg-primary/10 ml-auto transition-all"
+                        >
+                          Live Demo <ExternalLink size={12} />
+                        </a>
+                      )}
+                    </div>
+                  )}
                 </div>
               </div>
             </MotionDiv>
