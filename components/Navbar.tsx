@@ -1,14 +1,9 @@
 
 import React, { useState, useEffect } from 'react';
-import { Menu, Battery, Wifi, User, Sun, Moon, FileText, Download } from 'lucide-react';
+import { Menu, Battery, Wifi, User, FileText, Download } from 'lucide-react';
 import { motion } from 'framer-motion';
 
-interface NavbarProps {
-  toggleTheme: () => void;
-  theme: string;
-}
-
-const Navbar: React.FC<NavbarProps> = ({ toggleTheme, theme }) => {
+const Navbar: React.FC = () => {
   const [time, setTime] = useState(new Date());
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   
@@ -29,7 +24,7 @@ const Navbar: React.FC<NavbarProps> = ({ toggleTheme, theme }) => {
   ];
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-50 px-2 pt-2 flex justify-center">
+    <div className="fixed top-0 left-0 right-0 z-50 px-2 pt-2 flex justify-center bg-black">
       <MotionDiv 
         initial="hidden"
         animate="visible"
@@ -45,7 +40,7 @@ const Navbar: React.FC<NavbarProps> = ({ toggleTheme, theme }) => {
             }
           }
         }}
-        className="navbar w-full max-w-6xl min-h-12 bg-base-100/80 backdrop-blur-md rounded-t-xl sm:rounded-xl border border-white/20 shadow-sm px-4"
+        className="navbar w-full max-w-6xl min-h-12 bg-black/95 backdrop-blur-md rounded-t-xl sm:rounded-xl border border-white/20 shadow-sm px-4"
       >
         {/* Left: User Profile */}
         <MotionDiv 
@@ -88,11 +83,6 @@ const Navbar: React.FC<NavbarProps> = ({ toggleTheme, theme }) => {
               <Download size={14} className="hidden group-hover:block" />
               <span className="hidden sm:inline text-xs font-bold">Resume</span>
            </MotionA>
-
-           {/* Theme Toggle */}
-          <button onClick={toggleTheme} className="btn btn-ghost btn-xs btn-circle">
-  {theme === 'dark' ? <Sun size={14} /> : <Moon size={14} />}
-</button>
 
           {/* System Icons */}
           <div className="hidden sm:flex items-center gap-2 px-2 border-l border-white/10 opacity-70">

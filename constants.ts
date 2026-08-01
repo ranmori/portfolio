@@ -10,7 +10,7 @@ export const HERO_DATA = {
 export const SKILLS: Skill[] = [
   {
     category: "Languages",
-    items: ["JavaScript (ES6+)", "TypeScript", "Python", "HTML5", "CSS3"],
+    items: ["JavaScript (ES6+)", "TypeScript", "Python", "Go", "Dart", "HTML5", "CSS3"],
   },
   {
     category: "Frontend",
@@ -40,6 +40,7 @@ export const SKILLS: Skill[] = [
       "Context API",
       "MongoDB",
       "SQL",
+      "Prisma",
     ],
   },
   {

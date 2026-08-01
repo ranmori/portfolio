@@ -81,8 +81,8 @@ const GeminiChat: React.FC = () => {
           <div
             className={`chat-bubble text-sm ${
               msg.role === 'user'
-                ? 'chat-bubble-primary shadow-lg shadow-primary/20 text-white'
-                : 'bg-white/80 dark:bg-black/50 backdrop-blur-md text-base-content border border-white/10 shadow-sm'
+                ? 'chat-bubble-primary shadow-lg shadow-primary/20 text-primary-content'
+                : 'bg-black/50 backdrop-blur-md text-base-content border border-white/10 shadow-sm'
             }`}
           >
             {msg.text}
@@ -148,7 +148,7 @@ const GeminiChat: React.FC = () => {
                       <Bot size={14} />
                     </div>
                   </div>
-                  <div className="chat-bubble bg-white/50 backdrop-blur-md border border-white/10">
+                  <div className="chat-bubble bg-black/50 backdrop-blur-md border border-white/10">
                     <Loader2 size={16} className="animate-spin text-primary" />
                   </div>
                 </div>
@@ -162,7 +162,7 @@ const GeminiChat: React.FC = () => {
                 <input
                   type="text"
                   placeholder="Input command..."
-                  className="input input-bordered w-full pr-12 bg-white/40 dark:bg-black/20 border-white/20 focus:outline-none focus:border-primary rounded-xl font-mono text-sm"
+                  className="input input-bordered w-full pr-12 bg-black/20 border-white/20 focus:outline-none focus:border-primary rounded-xl font-mono text-sm"
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
                   onKeyDown={handleKeyPress}
