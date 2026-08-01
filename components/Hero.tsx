@@ -147,7 +147,6 @@ const Hero: React.FC = () => {
               <div className="flex flex-col lg:flex-row gap-12 items-center lg:items-start">
                 {/* Avatar Side */}
                 <div className="flex-shrink-0 relative group">
-                  <div className="absolute inset-0 bg-primary/20 rounded-[2rem] blur-2xl group-hover:blur-3xl transition-all duration-500"></div>
                   <MotionDiv
                     className="w-64 h-64 lg:w-80 lg:h-80 rounded-[2rem] overflow-hidden shadow-2xl relative border-4 border-base-100 z-10 bg-base-200"
                     whileHover={{ scale: 1.02 }}
@@ -194,12 +193,10 @@ const Hero: React.FC = () => {
                       Open to Work
                     </div>
 
-                    <h1 className="text-5xl lg:text-7xl font-extrabold mb-6 tracking-tight leading-tight">
-                      Full Stack <br />
-                      <span
-                        className="text-5xl lg:text-7xl font-extrabold text-transparent bg-clip-text
-                                   bg-gradient-to-r from-white to-white/70"
-                      >
+                    {/* one line at every width: scales with the viewport, never wraps */}
+                    <h1 className="text-[clamp(1.75rem,4.4vw,4rem)] font-extrabold mb-6 tracking-tight leading-tight whitespace-nowrap">
+                      Full Stack{" "}
+                      <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white to-white/70">
                         Engineer.
                       </span>
                     </h1>
