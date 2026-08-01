@@ -55,12 +55,12 @@ const Hero: React.FC = () => {
       initial={{ opacity: 0, y: 50, scale: 0.95 }}
       animate={{ opacity: 1, y: 0, scale: 1 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="w-full max-w-6xl flex flex-col h-full"
+      className="w-full max-w-6xl flex flex-col"
     >
       {/* Main OS Window */}
-      <div className="bg-base-100/80 backdrop-blur-xl rounded-3xl shadow-2xl overflow-hidden border border-white/20 flex flex-col min-h-[70vh] md:min-h-[800px]">
+      <div className="bg-base-100/80 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/20 flex flex-col min-h-[70vh]">
         {/* Window Header / Tab Bar */}
-        <div className="bg-base-200/50 border-b border-white/10 p-2 flex flex-col md:flex-row items-center gap-4 sticky top-0 z-20 backdrop-blur-md">
+        <div className="bg-black/95 border-b border-white/10 rounded-t-3xl p-2 flex flex-col md:flex-row items-center gap-4 sticky top-14 z-20 backdrop-blur-md">
           {/* Window Controls (Mac Style) */}
           <div className="hidden md:flex gap-2 px-4">
             <div className="w-3 h-3 rounded-full bg-red-400 hover:bg-red-500 transition-colors shadow-sm"></div>
@@ -104,7 +104,7 @@ const Hero: React.FC = () => {
         </div>
 
         {/* Content Area */}
-        <div className="flex-1 p-6 md:p-10 overflow-y-auto relative scrollbar-thin scrollbar-thumb-base-300 scrollbar-track-transparent">
+        <div className="flex-1 p-6 md:p-10 relative">
           <AnimatePresence mode="wait">
             <MotionDiv
               key={activeTab}
@@ -112,10 +112,9 @@ const Hero: React.FC = () => {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -20 }}
               transition={{ duration: 0.3 }}
-              className="h-full"
             >
               {activeTab === "profile" && (
-                <div className="h-full flex flex-col justify-center max-w-4xl mx-auto">
+                <div className="flex flex-col justify-center max-w-4xl mx-auto py-6">
                   <div className="flex flex-col lg:flex-row gap-12 items-center lg:items-start">
                     {/* Avatar Side */}
                     <div className="flex-shrink-0 relative group">
@@ -168,11 +167,8 @@ const Hero: React.FC = () => {
                         <h1 className="text-5xl lg:text-7xl font-extrabold mb-6 tracking-tight leading-tight">
                           Full Stack <br />
                           <span
-                            className="text-5xl  lg:text-7xl font-extrabold text-transparent bg-clip-text
-                                       bg-gradient-to-r from-base-content to-base-content/80
-                                       dark:bg-gradient-to-r dark:from-base-100 dark:to-base-100/70
-                                       [text-shadow:0_0_1px_rgba(255,255,255,0.8)]
-                                       dark:[text-shadow:0_0_1px_rgba(0,0,0,0.6)]"
+                            className="text-5xl lg:text-7xl font-extrabold text-transparent bg-clip-text
+                                       bg-gradient-to-r from-white to-white/70"
                           >
                             Engineer.
                           </span>

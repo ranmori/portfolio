@@ -40,4 +40,5 @@ export interface Book {
   author: string;
   category: string;
   cover: string;
+  coverFile?: string;
 }

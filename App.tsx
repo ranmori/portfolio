@@ -16,23 +16,11 @@ const Loader = () => (
 );
 
 const App: React.FC = () => {
-  const [theme, setTheme] = useState<'light' | 'dark'>('light');
-
-  /* restore user (or OS) preference */
+  /* single black-and-white theme */
   useEffect(() => {
-    const saved = localStorage.getItem('theme') as 'light' | 'dark' | null;
-    const initial =
-      saved ?? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-    setTheme(initial);
-    document.documentElement.setAttribute('data-theme', initial);
+    localStorage.removeItem('theme');
+    document.documentElement.setAttribute('data-theme', 'dark');
   }, []);
-
-  const toggleTheme = () => {
-    const next = theme === 'light' ? 'dark' : 'light';
-    setTheme(next);
-    document.documentElement.setAttribute('data-theme', next);
-    localStorage.setItem('theme', next);
-  };
 
   const codeSnippet = `#!/bin/bash
 # NaemaOS – developer-friendly runtime
@@ -43,29 +31,20 @@ while true; do
 done`.repeat(3);
 
   return (
-    <div className="min-h-screen font-sans text-base-content bg-base-100 relative selection:bg-primary selection:text-primary-content overflow-hidden flex flex-col">
-      {/* ---- BACKGROUND LAYERS (theme-aware) ---- */}
-      <div
-        className={`fixed inset-0 z-0 pointer-events-none transition-colors duration-700 ${
-          theme === 'dark'
-            ? 'bg-gradient-to-br from-black via-[#050505] to-[#0a0a0a]'
-            : 'bg-gradient-to-br from-[#f8f6f4] via-[#e8e3dd] to-[#f0ebe5]'
-        }`}
-      />
+    <div className="min-h-screen font-sans text-base-content bg-base-100 relative selection:bg-primary selection:text-primary-content flex flex-col">
+      {/* ---- BACKGROUND LAYERS ---- */}
+      <div className="fixed inset-0 z-0 pointer-events-none bg-black" />
       <div
         className="fixed inset-0 z-0 pointer-events-none opacity-[0.4]"
         style={{
-          backgroundImage: `radial-gradient(circle, ${
-            theme === 'dark' ? 'rgba(255,255,255,0.05)' : 'rgba(100,100,100,0.2)'
-          } 2px, transparent 2px)`,
+          backgroundImage:
+            'radial-gradient(circle, rgba(255,255,255,0.05) 2px, transparent 2px)',
           backgroundSize: '40px 40px',
         }}
       />
-      <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden flex items-center justify-center opacity-[0.03] dark:opacity-[0.05]">
+      <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden flex items-center justify-center opacity-[0.05]">
         <pre
-          className={`font-mono text-sm md:text-lg leading-loose text-current transform -rotate-12 scale-150 whitespace-pre-wrap max-w-[150%] select-none blur-[1px] ${
-            theme === 'dark' ? 'text-white' : 'text-black'
-          }`}
+          className="font-mono text-sm md:text-lg leading-loose text-white transform -rotate-12 scale-150 whitespace-pre-wrap max-w-[150%] select-none blur-[1px]"
         >
           {codeSnippet}
         </pre>
@@ -76,11 +55,11 @@ done`.repeat(3);
       </div>
 
       {/* ---- CONTENT ---- */}
-      <div className="relative z-10 flex flex-col h-full min-h-screen">
-        <Navbar toggleTheme={toggleTheme} theme={theme} />
+      <div className="relative z-10 flex flex-col min-h-screen">
+        <Navbar />
 
         <Suspense fallback={<Loader />}>
-          <main className="flex-grow flex flex-col items-center justify-center p-4 pt-20 pb-10">
+          <main className="flex-grow flex flex-col items-center p-4 pt-24 pb-10">
             <Hero />
           </main>
           <Footer />

@@ -39,8 +39,8 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <div className="h-full flex flex-col justify-center">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 h-full">
+    <div className="w-full flex flex-col justify-center pb-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* Left Info Panel (unchanged styling) */}
         <div className="flex flex-col justify-center space-y-8">
           <div>

@@ -1,5 +1,43 @@
 @import "tailwindcss";
-@plugin "daisyui";
+@plugin "daisyui" {
+  themes: dark;
+}
+
+/* single black-and-white theme */
+@plugin "daisyui/theme" {
+  name: "dark";
+  default: true;
+  prefersdark: true;
+  color-scheme: dark;
+
+  --color-base-100: #000000;
+  --color-base-200: #000000;
+  --color-base-300: #000000;
+  --color-base-content: #ffffff;
+  --color-primary: #ffffff;
+  --color-primary-content: #000000;
+  --color-secondary: #ffffff;
+  --color-secondary-content: #000000;
+  --color-accent: #ffffff;
+  --color-accent-content: #000000;
+  --color-neutral: #000000;
+  --color-neutral-content: #ffffff;
+  --color-info: #ffffff;
+  --color-info-content: #000000;
+  --color-success: #ffffff;
+  --color-success-content: #000000;
+  --color-warning: #ffffff;
+  --color-warning-content: #000000;
+  --color-error: #ff5555;
+  --color-error-content: #000000;
+}
+
+html,
+body {
+  background-color: #000000;
+  color: #ffffff;
+}
+
 /* your custom scrollbar rule */
 ::-webkit-scrollbar { width: 10px; }
 ::-webkit-scrollbar-track { background: transparent; }

@@ -9,7 +9,7 @@ const Skills: React.FC = () => {
   const MotionDiv = motion.div as any;
 
   return (
-    <div className="h-full overflow-y-auto pr-2 pb-10">
+    <div className="w-full pb-10">
       <div className="text-center mb-10">
         <h2 className="text-3xl font-bold mb-2">Tech Stack & Experience</h2>
         <p className="opacity-60">My arsenal of tools and professional timeline.</p>
