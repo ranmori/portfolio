@@ -3,9 +3,9 @@ import { Project, Skill, Experience, Painting, Book } from './types';
 
 export const HERO_DATA = {
   name: "Naema Mohmed",
-  title: "Full Stack Developer",
-  tagline: "Building scalable, accessible, and pixel-perfect web experiences.",
-  description: "A MERN developer building end-to-end web applications with a strong focus on clean architecture, accessible UI, and real-world usability. I ship production-ready features, translate Figma designs into scalable code, and integrate AI-driven functionality where it adds real value."};
+  title: "Full Stack Engineer",
+  tagline: "Sole engineer behind Planno — a multi-tenant workforce management SaaS running in production.",
+  description: "I'm the sole engineer on Planno, a multi-tenant workforce management platform built under contract for Square Security and serving 350+ live users. I own it end to end: a TypeScript/Express backend on PostgreSQL and Prisma, a React dashboard, and a Flutter mobile app. That means tenant isolation, scheduling logic that has to hold up against labor law, GPS-verified clock-ins, and GDPR compliance — not just screens. Alongside it I build across the stack, from frontend work in React and Flutter to backend services in Node and Go, and I reach for AI where it earns its place."};
 
 export const SKILLS: Skill[] = [
   {
@@ -17,6 +17,7 @@ export const SKILLS: Skill[] = [
     items: [
       "React 18+",
       "Next.js",
+      "Flutter",
       "Tailwind CSS",
       "DaisyUI",
       "Framer Motion",
@@ -29,6 +30,7 @@ export const SKILLS: Skill[] = [
       "Node.js",
       "Express.js",
       "REST APIs",
+      "Socket.io",
       "Authentication (JWT)",
     ],
   },
@@ -39,6 +41,7 @@ export const SKILLS: Skill[] = [
       "React Query",
       "Context API",
       "MongoDB",
+      "PostgreSQL",
       "SQL",
       "Prisma",
     ],
@@ -58,25 +61,29 @@ export const SKILLS: Skill[] = [
 
 export const EXPERIENCE: Experience[] = [
    {
-    company: "Independent / Contract",
-    role: "Freelance Frontend developer",
-    period: "2023 - Present",
-    description: "Built and shipped responsive, accessible web interfaces using React and modern frontend tooling. Focused on clean UI, performance optimization, and maintainable component architecture. Worked with REST APIs, Git/GitHub workflows, and AI-assisted tools (Copilot, Claude) to improve development speed and code quality.",
+    company: "Planno — under contract for Square Security",
+    role: "Sole Engineer (Full Stack)",
+    period: "2025 - Present",
+    description: "Sole engineer on a multi-tenant workforce management SaaS in production with 350+ live users, owning the entire stack: a Node.js/TypeScript/Express backend on PostgreSQL and Prisma, a React web dashboard, and a Flutter mobile app. Built tenant isolation middleware to keep every query scoped to its organization, a shift-collision engine that rejects overlapping assignments and enforces labor-law-compliant break periods, and server-side GPS geofencing using the Haversine formula so clock-ins are verified on the backend rather than trusted from the device. Added real-time chat and alerts over Socket.io, and carried out the GDPR/DSGVO compliance work the platform ships under.",
    },
   {
-    company: "Upwork",
-    role: "Freelance Designer (Remote)",
-    period: "2018 - 2022",
-    description: " Delivered branding, logo design, and digital assets for international clients.Applied UI/UX principles that now directly inform frontend development work.Collaborated remotely with clients, managing feedback, revisions, and deadlines."
+    company: "Tech4Dev — Women Techsters Fellowship",
+    role: "Developer, AquaSense (Capstone Team)",
+    period: "2025",
+    description: "Ran alongside Planno. Developer on a 6-person cross-functional team of data scientists, product managers, and designers building AquaSense, an IoT water quality monitoring app. Placed Top 15 of 70 teams and presented to investors at the final showcase.",
   },
-  
- 
   {
     company: "Medina Dental Clinic / Sultan Dental Clinic",
     role: "General Dental Clinician",
     period: "2023 - 2024",
     description: "Worked in high-pressure clinical environments requiring precision, documentation, and ethical responsibility. Developed strong problem-solving, attention to detail, and communication skills transferable to software development and client-facing work.",
    },
+  {
+    company: "Upwork",
+    role: "Freelance Designer (Remote)",
+    period: "2020 - 2022",
+    description: " Delivered branding, logo design, and digital assets for international clients.Applied UI/UX principles that now directly inform frontend development work.Collaborated remotely with clients, managing feedback, revisions, and deadlines."
+  },
 ];
 
 export const PROJECTS: Project[] = [
@@ -105,8 +112,42 @@ export const PROJECTS: Project[] = [
       "Personal site, Features automated résumé parsing, instant colour-theme switching, lazy-loaded interactive sections, and SEO/OG meta tuned for recruiter tracking links and 100 Lighthouse performance",
     tags: ["typescript", "Vite", "React", "Daisyui", "JavaScript"],
     imageUrl: "https://picsum.photos/600/400?random=12",
-    demoUrl: "https://portfolio-pv2h.vercel.app/", 
+    demoUrl: "https://portfolio-seven-pi-11.vercel.app/",
     repoUrl: "https://github.com/ranmori/portfolio",
+  },
+  {
+    id: 4,
+    title: "Echo",
+    description:
+      "A personal safety AI built for the Kaggle x Google Gemma 4 Good Hackathon (14,523 entrants). Detects distress directly from native audio using Gemma 4 E4B, then escalates agentically through tiered responses driven by Gemma 4 26B A4B function calling. Multilingual by design, covering English, Yoruba, Igbo, and Nigerian Pidgin.",
+    tags: ["Gemma 4", "Python", "Agentic AI", "Function Calling", "Audio AI", "Multilingual"],
+    imageUrl: "https://picsum.photos/600/400?random=13",
+    demoUrl: "https://www.kaggle.com/code/naemamohmed/echo-guardian-notebook",
+    repoUrl: "https://github.com/ranmori/guardian/tree/main",
+  },
+  {
+    id: 5,
+    title: "AquaSense",
+    description:
+      "Cross-platform IoT water quality monitoring app built with a 6-person cross-functional team during the Women Techsters Fellowship. Placed Top 15 of 70 teams and was presented to investors at the final showcase.",
+    tags: ["Flutter", "Dart", "Firebase", "Gemini API", "IoT"],
+    imageUrl: "https://picsum.photos/600/400?random=14",
+  },
+  {
+    id: 6,
+    title: "GoQueue",
+    description:
+      "A production-grade background job processor written in Go, covering queueing, worker concurrency, and retry semantics. Currently in progress.",
+    tags: ["Go", "Concurrency", "Background Jobs", "In Progress"],
+    imageUrl: "https://picsum.photos/600/400?random=15",
+  },
+  {
+    id: 7,
+    title: "Autograd Engine & Digit Classifier",
+    description:
+      "A neural network autograd engine written from scratch, then extended into a working 10-class handwritten digit classifier with softmax and cross-entropy loss. Built to understand backpropagation at the implementation level rather than through a framework.",
+    tags: ["Python", "Autograd", "Backpropagation", "Neural Networks"],
+    imageUrl: "https://picsum.photos/600/400?random=16",
   },
 ];
 
