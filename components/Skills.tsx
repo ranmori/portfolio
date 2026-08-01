@@ -47,7 +47,7 @@ const Skills: React.FC = () => {
             ))}
           </div>
 
-          <div className="mt-6 p-5 rounded-xl bg-gradient-to-br from-primary/5 to-secondary/5 border border-primary/10">
+          <div className="mt-6 p-5 rounded-xl border border-primary/10">
               <div className="flex items-start gap-3">
                   <Cpu className="mt-1 text-primary w-5 h-5" />
                   <div>

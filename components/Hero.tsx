@@ -147,7 +147,6 @@ const Hero: React.FC = () => {
               <div className="flex flex-col lg:flex-row gap-12 items-center lg:items-start">
                 {/* Avatar Side */}
                 <div className="flex-shrink-0 relative group">
-                  <div className="absolute inset-0 bg-primary/20 rounded-[2rem] blur-2xl group-hover:blur-3xl transition-all duration-500"></div>
                   <MotionDiv
                     className="w-64 h-64 lg:w-80 lg:h-80 rounded-[2rem] overflow-hidden shadow-2xl relative border-4 border-base-100 z-10 bg-base-200"
                     whileHover={{ scale: 1.02 }}
