@@ -193,12 +193,10 @@ const Hero: React.FC = () => {
                       Open to Work
                     </div>
 
-                    <h1 className="text-5xl lg:text-7xl font-extrabold mb-6 tracking-tight leading-tight">
-                      Full Stack <br />
-                      <span
-                        className="text-5xl lg:text-7xl font-extrabold text-transparent bg-clip-text
-                                   bg-gradient-to-r from-white to-white/70"
-                      >
+                    {/* one line at every width: scales with the viewport, never wraps */}
+                    <h1 className="text-[clamp(1.75rem,4.4vw,4rem)] font-extrabold mb-6 tracking-tight leading-tight whitespace-nowrap">
+                      Full Stack{" "}
+                      <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white to-white/70">
                         Engineer.
                       </span>
                     </h1>
