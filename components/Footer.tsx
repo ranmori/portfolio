@@ -13,6 +13,7 @@ const Footer: React.FC = () => {
       <nav className="grid grid-flow-col gap-4">
         <a href="#profile" className="link link-hover">Profile</a>
         <a href="#projects" className="link link-hover">Projects</a>
+        <a href="#opensource" className="link link-hover">Open Source</a>
         <a href="#contact" className="link link-hover">Contact</a>
       </nav> 
       <aside>

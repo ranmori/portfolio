@@ -10,12 +10,14 @@ import {
   Terminal,
   Sparkles,
   Palette,
+  GitPullRequest,
 } from "lucide-react";
 import { HERO_DATA } from "../constants";
 import Projects from "./Projects";
 import Skills from "./Skills";
 import Contact from "./Contact";
 import Hobbies from "./Hobbies";
+import OpenSource from "./OpenSource";
 
 /* -----------  import the three images  ----------- */
 import img1 from "../assets/images/Profile3.webp";
@@ -26,6 +28,7 @@ const profilePics = [img1, img2, img3];
 const sections = [
   { id: "profile", label: "Profile", icon: User },
   { id: "projects", label: "Projects", icon: Folder },
+  { id: "opensource", label: "Open Source", icon: GitPullRequest },
   { id: "skills", label: "Skills", icon: Code2 },
   { id: "hobbies", label: "Hobbies", icon: Palette },
   { id: "contact", label: "Contact", icon: Mail },
@@ -220,16 +223,21 @@ const Hero: React.FC = () => {
                       </button>
                     </div>
 
-                    <div className="mt-12 flex items-center justify-center lg:justify-start gap-8 opacity-50">
+                    <div className="mt-12 flex flex-wrap items-center justify-center lg:justify-start gap-6 sm:gap-8 opacity-50">
                       <div className="w-px h-10 bg-base-content/20"></div>
                       <div className="flex flex-col items-center lg:items-start">
-                        <span className="text-3xl font-bold">10+</span>
-                        <span className="text-xs uppercase tracking-wider">Prod Releases</span>
+                        <span className="text-3xl font-bold">40</span>
+                        <span className="text-xs uppercase tracking-wider">Staff on Wrenta</span>
                       </div>
                       <div className="w-px h-10 bg-base-content/20"></div>
                       <div className="flex flex-col items-center lg:items-start">
-                        <span className="text-3xl font-bold">0</span>
-                        <span className="text-xs uppercase tracking-wider">Open Bugs (last 90d)</span>
+                        <span className="text-3xl font-bold">500</span>
+                        <span className="text-xs uppercase tracking-wider">Users load-tested</span>
+                      </div>
+                      <div className="w-px h-10 bg-base-content/20"></div>
+                      <div className="flex flex-col items-center lg:items-start">
+                        <span className="text-3xl font-bold">~926</span>
+                        <span className="text-xs uppercase tracking-wider">Automated tests</span>
                       </div>
                     </div>
                   </MotionDiv>
@@ -241,6 +249,11 @@ const Hero: React.FC = () => {
           {/* PROJECTS */}
           <Section id="projects">
             <Projects />
+          </Section>
+
+          {/* OPEN SOURCE */}
+          <Section id="opensource">
+            <OpenSource />
           </Section>
 
           {/* SKILLS */}

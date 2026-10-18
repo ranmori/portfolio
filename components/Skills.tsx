@@ -1,7 +1,7 @@
 import React from 'react';
-import { SKILLS, EXPERIENCE } from '../constants';
+import { SKILLS, EXPERIENCE, CERTIFICATES } from '../constants';
 import { motion } from 'framer-motion';
-import { Briefcase, Code, Cpu } from 'lucide-react';
+import { Briefcase, Code, Award, ExternalLink } from 'lucide-react';
 import GitHeatmap from './GitHeatmap';
 
 const Skills: React.FC = () => {
@@ -47,16 +47,31 @@ const Skills: React.FC = () => {
             ))}
           </div>
 
-          <div className="mt-6 p-5 rounded-xl border border-primary/10">
-              <div className="flex items-start gap-3">
-                  <Cpu className="mt-1 text-primary w-5 h-5" />
+          {/* Certificates */}
+          <div className="mt-6">
+            <h4 className="text-xs font-bold uppercase opacity-50 tracking-wider mb-3 flex items-center gap-2">
+              <Award size={14} className="text-primary" /> Certifications
+            </h4>
+            <div className="space-y-2">
+              {CERTIFICATES.map((cert) => (
+                <a
+                  key={cert.url}
+                  href={cert.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-start justify-between gap-3 p-4 rounded-xl border border-primary/10 hover:border-primary/30 hover:bg-primary/5 transition-colors"
+                >
                   <div>
-                      <h4 className="font-bold text-sm">System Optimization</h4>
-                      <p className="text-xs opacity-70 mt-1 leading-relaxed">
-                          Always aiming for 100% Lighthouse scores. Proficient in code-splitting, lazy loading, and asset optimization for maximum performance.
-                      </p>
+                    <div className="font-bold text-sm group-hover:text-primary transition-colors">{cert.title}</div>
+                    <div className="text-xs opacity-60 mt-1">
+                      {cert.issuer}
+                      {cert.date && <> · {cert.date}</>}
+                    </div>
                   </div>
-              </div>
+                  <ExternalLink size={14} className="mt-1 shrink-0 opacity-40 group-hover:opacity-80" />
+                </a>
+              ))}
+            </div>
           </div>
         </div>
 
