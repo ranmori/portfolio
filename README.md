@@ -1,6 +1,6 @@
 # Naema Mohmed — Portfolio
 
-Personal site of Naema Mohmed, full stack engineer and sole engineer behind [Wrenta](https://wrenta.co).
+Personal site of Naema Mohmed, software engineer and sole engineer behind [Wrenta](https://wrenta.co).
 
 - Live: <https://naemamohmed.com>
 - GitHub: <https://github.com/ranmori>

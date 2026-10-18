@@ -3,7 +3,7 @@ import { Project, Skill, Experience, Painting, Book, CaseStudy, Contribution, Ce
 
 export const HERO_DATA = {
   name: "Naema Mohmed",
-  title: "Full Stack Engineer",
+  title: "Software Engineer",
   tagline: "Sole engineer behind Wrenta — a workforce management and payroll platform live on web, iOS and Android.",
   description: "I'm the sole engineer on Wrenta, a multi-tenant workforce management platform that runs the day-to-day operations of a German security services company: 40 staff across 15 sites and 3,458 rostered hours in its first ~13 weeks live, load-tested to 500 users before launch. I own it end to end: a TypeScript/Express API on PostgreSQL and Prisma, a React dashboard, and a Flutter app on the App Store and Google Play. That means tenant isolation, DST-safe rosters, race-free shift claiming, server-verified GPS clock-ins and German payroll law — not just screens. Alongside it I contribute to open source (merged fixes in Sentry, PRs in asynq) and I'm growing into AI engineering — building models from first principles, an autograd engine and a GPT from scratch, and shipping LLM tools like Echo."};
 
