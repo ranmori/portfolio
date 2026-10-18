@@ -1,8 +1,9 @@
 // src/components/Projects.tsx
-import React from 'react';
+import React, { useState } from 'react';
 import { PROJECTS } from '../constants';
 import { ExternalLink, Github, Folder } from 'lucide-react';
 import { motion } from 'framer-motion';
+import WrentaCaseStudy from './WrentaCaseStudy';
 
 /* ----------  project 1 pics  ---------- */
 import mag1 from '../assets/images/ISSUEeDITOR.webp';
@@ -39,18 +40,46 @@ const cyclePort = () => {
   return portImgs[portIdx];
 };
 
+const filters = [
+  { id: 'all', label: 'All' },
+  { id: 'ai', label: 'AI / ML' },
+  { id: 'web', label: 'Web & Systems' },
+] as const;
+
 const Projects: React.FC = () => {
   const MotionDiv = motion.div as any;
+  const [filter, setFilter] = useState<(typeof filters)[number]['id']>('all');
+  const visible = filter === 'all' ? PROJECTS : PROJECTS.filter((p) => p.category === filter);
 
   return (
     <div className="w-full pb-10">
       <div className="text-center mb-10">
         <h2 className="text-3xl font-bold mb-2">Selected Works</h2>
-        <p className="opacity-60">A curated list of my recent digital creations.</p>
+        <p className="opacity-60">Production systems first, then the things I build to learn.</p>
+      </div>
+
+      <WrentaCaseStudy />
+
+      <div role="tablist" className="flex justify-center gap-1 mb-6">
+        {filters.map((f) => (
+          <button
+            key={f.id}
+            role="tab"
+            aria-selected={filter === f.id}
+            onClick={() => setFilter(f.id)}
+            className={`px-4 py-1.5 rounded-lg text-xs font-bold transition-colors ${
+              filter === f.id
+                ? 'bg-primary text-primary-content'
+                : 'text-base-content/60 hover:bg-base-content/5 hover:text-base-content'
+            }`}
+          >
+            {f.label}
+          </button>
+        ))}
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {PROJECTS.map((project, index) => {
+        {visible.map((project, index) => {
           let imgSrc = project.imageUrl; // fallback
           if (project.id === 1) imgSrc = cycleMag();
           if (project.id === 2) imgSrc = cycleDoc();
@@ -88,7 +117,7 @@ const Projects: React.FC = () => {
                     </div>
                   </div>
 
-                  <p className="text-xs opacity-70 my-3 leading-relaxed line-clamp-3">
+                  <p className="text-xs opacity-70 my-3 leading-relaxed line-clamp-4">
                     {project.description}
                   </p>
 
